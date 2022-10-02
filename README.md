@@ -8,5 +8,5 @@
 </p>
 <h5>Home Page(after logging in</h5>
 <p>
-    <img src="readmeimages/bloghome.png">
+    <img src="readmeimages/bloghomep.png">
 </p>
