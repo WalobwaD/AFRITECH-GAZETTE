@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, UpdateView
 from .models import *
 from .forms import *
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
 
 
 def create_view(request):
@@ -13,7 +11,11 @@ def create_view(request):
         create_form = PostForm(request.POST, request.FILES)
         
         if create_form.is_valid():
-            create_form.save()
+            instance = create_form.save(commit=False)
+            instance.author = request.user
+            instance.save()
+            
+            return redirect('blog:home')
               
     else:
         create_form = PostForm()
