@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="cards pt-24">
+        <div class="row">
+            {% for post in posts %}
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ post.post_image.url }}" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title font-bold text-2xl">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.description }}</p>
+                        <a href="{{ post.slug }}" class="btn btn-primary">View Article</a>
+                        <small class="ml-2"><em>Published: {{ post.created }}</em></small>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    <div class="landing">
+        <a href="{% url 'Authenticate:login' %}" class="button btn btn-warning font-bold text-1xl p-3">
+            Write your blog
+        </a>
+    </div>
+    {% endif %}
+
+{% endblock %}

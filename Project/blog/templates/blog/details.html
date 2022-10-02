@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    <div class="container text-center">
+        <div class="card mx-auto w-25 mt-20">
+            <img src="{{ detail.post_image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title font-bold">{{ detail.title }}</h5><hr>
+              <p class="card-text">{{ detail.description }}</p>
+              <p class="card-text">{{ detail.body }}</p>
+              <a href="#" class="btn btn-primary">Update</a>
+            </div>
+          </div>
+    </div>
+
+{% endblock %}

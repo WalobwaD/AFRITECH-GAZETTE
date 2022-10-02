@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Register
+{% endblock %}
+{% block content %}
+    {% if registered %}
+        <div>Thanks for registering</div>
+    {% else %}
+    <div class="container register">
+        <form method = 'POST' enctype="multipart/form-data" 
+            class="form p-3 form-control text-gray-100 font-bold bg-gray-700 leading-loose bg-opacity-50">
+            {% csrf_token %}
+            {{ user_form}}
+            <div class="profile mt-3">{{ profile_form }}</div>
+            <p class="text-center">Already have an account? <a href="{% url 'Authenticate:login' %}">Login ...</a></p>
+            <div class="text-center">
+            <button type="submit" class="btn btn-primary p-3 mt-3" href="{% url 'Authenticate:login' %}">Register</button>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}

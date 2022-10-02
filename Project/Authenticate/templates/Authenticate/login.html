@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+    <div class="container login">
+        <form method = 'POST' class="form p-3 form-control bg-gray-700 bg-opacity-50 text-white">
+            {% csrf_token %}
+            <label for="name" class="font-bold text-1xl">Enter your username: </label><br>
+            <input type="text" placeholder= "Enter your username" name="username" class="name form-control"><br>
+            <label for="password" class="font-bold text-1xl">Enter your password: </label><br>
+            <input type="password" placeholder="Enter a password" name="password" class="password form-control"><br>
+            <p class="text-center">Don't have an account? <a href="#">Sign in</a></p>
+            <button class="btn btn-success mt-4 ml-32 ">Login</button>
+        </form>
+    </div>
+{% endblock %}

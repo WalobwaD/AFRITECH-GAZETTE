@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.unlogged {
+  background-color: black;
+  overflow-x: hidden;
+  background-image: url("/static/images/unsplash5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.unlogged header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border: none;
+  z-index: 10;
+}
+.unlogged header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.unlogged header .navbar .navlogo {
+  transition: 0.2s;
+}
+.unlogged header .navbar .navlogo:hover {
+  color: tomato;
+}
+.unlogged header .navbar .navitems {
+  display: flex;
+  margin-right: 80px;
+}
+.unlogged header .navbar .navitems .navitem {
+  margin-right: 20px;
+  font-size: 1.5rem;
+  margin-right: 40px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.unlogged header .navbar .navitems .navitem:hover {
+  color: aliceblue;
+  border-bottom: 2px solid tomato;
+}
+.unlogged .button {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  background-color: tomato;
+  border: none;
+  color: white;
+}
+.unlogged .login {
+  position: absolute;
+  top: 30%;
+  width: 30%;
+}
+.unlogged .login .form {
+  border: none;
+}
+.unlogged .register {
+  position: absolute;
+  top: 20%;
+}
+.unlogged .register .form {
+  border: none;
+  width: 40%;
+}
+
+.logged {
+  width: 100%;
+  background-color: azure;
+  overflow-x: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.logged header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border: none;
+  background-color: azure;
+  z-index: 10;
+}
+.logged header .navbar {
+  display: flex;
+  align-items: center;
+}
+.logged header .navbar .navlogo {
+  transition: 0.2s;
+  margin-left: -1000px;
+}
+.logged header .navbar .navlogo:hover {
+  color: tomato;
+}
+.logged header .navbar .navitems {
+  display: flex;
+  margin-right: 80px;
+}
+.logged header .navbar .navitems .navitem {
+  margin-right: 20px;
+  font-size: 1.5rem;
+  margin-right: 40px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.logged header .navbar .navitems .navitem:hover {
+  color: aliceblue;
+  border-bottom: 2px solid tomato;
+}
+.logged .sidebar {
+  height: 100vh;
+  width: 20%;
+  left: 0;
+}
+.logged .cards {
+  position: absolute;
+  top: 1%;
+}
+
+/*# sourceMappingURL=main.css.map */
