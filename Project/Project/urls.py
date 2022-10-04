@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Authenticate.urls')),
     path('', include('blog.urls')),
-     path('logout/', user_logout, name="logout"),
+    path('', include('Authenticate.api_urls')),
+    path('', include('blog.api_urls')),
+    path('logout/', user_logout, name="logout"),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

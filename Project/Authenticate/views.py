@@ -2,8 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.http import Http404
+
 from .forms import *
 from .models import *
+
+from rest_framework import status
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializer import *
 # Create your views here.
 def register(request):
     registered = False
@@ -62,3 +69,40 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('blog:home')
+
+
+class apiList(APIView):
+    def get(self, request, format=None):
+        userprofiles = UserProfile.objects.all()
+        serializer = UserProfileSerializer(userprofiles, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request, format=None):
+        serializer = UserProfileSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class apiDetails(APIView):
+    def get_object(self, pk):
+        UserProfile.objects.get(pk=pk)
+    
+    def get(self, request, pk, format=None):
+        userprofile = self.get_object(pk)
+        serializer = UserProfileSerializer(userprofile)
+        return Response(serializer.data)
+        
+    def put(self, request, pk, format=None):
+        userprofile = self.get_object(pk)
+        serializer = UserProfileSerializer(userprofile, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self, request, pk, forat=None):
+        userprofile = self.get_object(pk)
+        userprofile.delete 
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
