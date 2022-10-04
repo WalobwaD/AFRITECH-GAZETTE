@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Bebas+Neue&family=Comfortaa:wght@300;400;500;600;700&family=Peralta&family=Rubik+Distressed&family=Silkscreen&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -118,6 +119,30 @@
 .logged .cards {
   position: absolute;
   top: 1%;
+}
+.logged .creative h3 {
+  font-family: "Peralta", cursive;
+}
+.logged .createform {
+  font-family: "Comfortaa", cursive;
+  font-weight: 500;
+}
+.logged .createform button:hover {
+  background-color: tomato;
+  color: white;
+}
+.logged .detailhead {
+  font-family: "Peralta", cursive;
+}
+.logged .details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+.logged .details .detailed {
+  width: 70%;
+  height: 80vh;
 }
 
 /*# sourceMappingURL=main.css.map */

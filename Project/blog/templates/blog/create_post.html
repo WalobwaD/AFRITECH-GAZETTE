@@ -4,13 +4,16 @@
 Create Blog
 {% endblock %}
 {% block content %}
+    <div class="creative mt-5 pt-5 flex items-center justify-center">
+        <h3 class="text-4xl font-bold text-orange-400">Get Creative! <hr></h3>
+    </div>
 
     <div class="createform text-center pt-44">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ create_form.media }}
             {{ create_form | crispy}}
-            <button class="btn bg-gray-600 text-gray-100 p-2 mt-3">Publish</button>
+            <button class="btn bg-orange-300 text-gray-100 p-2 mt-3">Publish</button>
 
         </form>
     </div>

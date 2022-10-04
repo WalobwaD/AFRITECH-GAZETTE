@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Bebas+Neue&family=Comfortaa:wght@300;400;500;600;700&family=Peralta&family=Rubik+Distressed&family=Silkscreen&display=swap");
+
+
+$font-family1: 'Aboreto', cursive;
+$font-family2: 'Bebas Neue', cursive;
+$font-family3: 'Comfortaa', cursive;
+$font-family4: 'Peralta', cursive;
+$font-family5: 'Rubik Distressed', cursive;
+$font-family6: 'Silkscreen', cursive;
 *{
     margin:0;
     padding:0;
@@ -133,5 +142,39 @@
     .cards{
         position: absolute;
         top:1%;
+    }
+
+    .creative{
+        h3{
+            font-family:$font-family4;
+        }
+    }
+    
+    .createform{
+        font-family: $font-family3;
+        font-weight: 500;
+
+        button:hover{
+            background-color: tomato;
+            color: white;
+            
+        }
+    }
+
+    .detailhead{
+        font-family: $font-family4;
+
+    }
+
+    .details{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+
+        .detailed{
+            width: 70%;
+            height: 80vh;
+        }
     }
 }
