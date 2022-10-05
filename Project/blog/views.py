@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, UpdateView
 from .models import *
 from .forms import *
+from django.db.models import Q
 
 from rest_framework import status
 from rest_framework.views import APIView
@@ -33,6 +34,13 @@ class PostList(ListView):
     model = Post
     context_object_name = 'posts'
     template_name= 'blog/home.html'
+    
+    def get_queryset(self):
+        search = self.request.GET.get('q', '')
+        multiple_search = Q(Q(title__icontains=search) | Q(author__icontains=search))
+        posts = Post.objects.filter(multiple_search)
+        return posts
+    
     
 
 class PostDetails(DetailView):

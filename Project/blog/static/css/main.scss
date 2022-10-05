@@ -90,8 +90,6 @@ $font-family6: 'Silkscreen', cursive;
     width:100%;
     background-color:azure;
     overflow-x: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
 
     header{
         position: fixed;
@@ -101,19 +99,18 @@ $font-family6: 'Silkscreen', cursive;
         background-color:azure;
         z-index: 10;
 
-        .navbar{
-            display: flex;
-            // justify-content: space-between;
-            align-items: center;
-
-            .navlogo{
-                transition:0.2s;
-                margin-left: -1000px;
+        .nav{
+            .logo{
+                transition: 0.2s;
+        
             }
-            .navlogo:hover{
+            .logo:hover{
                 color: tomato;
-
             }
+            .search-bar{
+                margin:auto;
+            }
+        
             
             .navitems{
                 display:flex;

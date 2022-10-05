@@ -74,8 +74,6 @@
   width: 100%;
   background-color: azure;
   overflow-x: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 .logged header {
   position: fixed;
@@ -85,29 +83,27 @@
   background-color: azure;
   z-index: 10;
 }
-.logged header .navbar {
-  display: flex;
-  align-items: center;
-}
-.logged header .navbar .navlogo {
+.logged header .nav .logo {
   transition: 0.2s;
-  margin-left: -1000px;
 }
-.logged header .navbar .navlogo:hover {
+.logged header .nav .logo:hover {
   color: tomato;
 }
-.logged header .navbar .navitems {
+.logged header .nav .search-bar {
+  margin: auto;
+}
+.logged header .nav .navitems {
   display: flex;
   margin-right: 80px;
 }
-.logged header .navbar .navitems .navitem {
+.logged header .nav .navitems .navitem {
   margin-right: 20px;
   font-size: 1.5rem;
   margin-right: 40px;
   text-decoration: none;
   transition: 0.2s;
 }
-.logged header .navbar .navitems .navitem:hover {
+.logged header .nav .navitems .navitem:hover {
   color: aliceblue;
   border-bottom: 2px solid tomato;
 }

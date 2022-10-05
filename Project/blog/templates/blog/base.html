@@ -23,14 +23,18 @@
 <body class="unlogged">
 {% endif %}
     <header class="shadow-lg text-white">
-        <nav class="navbar">
+        <nav class="nav py-3">
             {% if user.is_authenticated %}
             <a class="ml-8"data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                 <span class="fa-solid fa-bars text-gray-800 text-2xl"></span>
             </a>
-            <a href="{% url 'blog:home' %}" class="navlogo text-gray-800">
-                <span class=" text-2xl fa-solid fa-blog">log</span>
+            <a href="{% url 'blog:home' %}" class=" text-gray-800 pl-3">
+                <span class="logo text-gray-800 text-2xl fa-solid fa-blog">log</span>
             </a>
+            <form method="GET" class="search-bar w-25 flex">
+                <input type="search" name="q" placeholder="search by topic" class=" form-control">
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
             {% else %}
             <a href="{% url 'blog:home' %}" class="navlogo">
                 <span class="px-4 text-2xl fa-solid fa-blog">log</span>
@@ -39,6 +43,7 @@
             <div class="navitems text-gray-800 font-bold ">
 
                 {% if user.is_authenticated %}
+                
                 <a href="{% url 'blog:create' %}"><span class="fa-solid fa-plus mr-8 mt-1 text-2xl"></span></a>
                 <div class="btn-group mr-1 ">
                     <button type="button" class="btn ">
