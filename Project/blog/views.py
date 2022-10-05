@@ -37,7 +37,7 @@ class PostList(ListView):
     
     def get_queryset(self):
         search = self.request.GET.get('q', '')
-        multiple_search = Q(Q(title__icontains=search) | Q(author__icontains=search))
+        multiple_search = Q(Q(title__icontains=search) | Q(description__icontains=search))
         posts = Post.objects.filter(multiple_search)
         return posts
     
