@@ -19,29 +19,29 @@
   border: none;
   z-index: 10;
 }
-.unlogged header .navbar {
+.unlogged header .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.unlogged header .navbar .navlogo {
+.unlogged header .nav .navlogo {
   transition: 0.2s;
 }
-.unlogged header .navbar .navlogo:hover {
+.unlogged header .nav .navlogo:hover {
   color: tomato;
 }
-.unlogged header .navbar .navitems {
+.unlogged header .nav .navitems {
   display: flex;
   margin-right: 80px;
 }
-.unlogged header .navbar .navitems .navitem {
+.unlogged header .nav .navitems .navitem {
   margin-right: 20px;
   font-size: 1.5rem;
   margin-right: 40px;
   text-decoration: none;
   transition: 0.2s;
 }
-.unlogged header .navbar .navitems .navitem:hover {
+.unlogged header .nav .navitems .navitem:hover {
   color: aliceblue;
   border-bottom: 2px solid tomato;
 }
