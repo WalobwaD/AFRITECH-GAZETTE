@@ -10,6 +10,8 @@ urlpatterns = [
     path('', PostList.as_view(), name="home"),
     path('create/', create_view, name="create"),
     path('<slug>', PostDetails.as_view(), name="details"),
+    path('update/<slug>', PostUpdate.as_view(), name='update'),
+    path('delete/<slug>', PostDelete.as_view(), name='delete'),
     
 ]
 if settings.DEBUG:

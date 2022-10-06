@@ -1,7 +1,10 @@
 {% extends 'blog/base.html' %}
 {% block title %}
+{{ detail.title }}
 {% endblock %}
 {% block content %}
+
+  {% if user.is_authenticated %}
   <div class="detailhead text-2xl mt-5 text-center p-5 font-bold">
     <p>{{ detail.author }}'s view on {{ detail.title }}</p>
   </div>
@@ -22,8 +25,13 @@
       <div class="body">
         <p class="text-center p-5">{{ detail.body }}</p>
       </div>
-
+      {% if user.id == detail.author.id %}
+      <a href="{% url 'blog:update' slug=detail.slug %}" class="btn btn-warning">Update</a>
+      <a href="{% url 'blog:delete' slug=detail.slug %}" class="btn btn-danger">Delete</a>
+      {% endif %}
     </div>
+
   </div>
+  {% endif %}
 
 {% endblock %}

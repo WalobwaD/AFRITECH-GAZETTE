@@ -4,6 +4,7 @@
 Create Blog
 {% endblock %}
 {% block content %}
+    {% if user.is_authenticated %}
     <div class="creative mt-5 pt-5 flex items-center justify-center">
         <h3 class="text-4xl font-bold text-orange-400">Get Creative! <hr></h3>
     </div>
@@ -17,4 +18,5 @@ Create Blog
 
         </form>
     </div>
+    {% endif %}
 {% endblock %}

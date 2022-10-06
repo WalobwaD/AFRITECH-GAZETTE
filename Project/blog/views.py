@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from .models import *
 from .forms import *
 from django.db.models import Q
+from django.urls import reverse_lazy
 
 from rest_framework import status
 from rest_framework.views import APIView
@@ -37,7 +38,10 @@ class PostList(ListView):
     
     def get_queryset(self):
         search = self.request.GET.get('q', '')
-        multiple_search = Q(Q(title__icontains=search) | Q(description__icontains=search))
+        multiple_search = Q(
+            Q(title__icontains=search) | 
+            Q(description__icontains=search) | 
+            Q(author__first_name=search))
         posts = Post.objects.filter(multiple_search)
         return posts
     
@@ -47,6 +51,17 @@ class PostDetails(DetailView):
     model = Post
     template_name='blog/details.html'
     context_object_name = 'detail'
+    
+class PostUpdate(UpdateView):
+    model = Post
+    template_name = 'blog/create_post.html'
+    fields = ['post_image', 'title', 'description', 'body']
+    
+class PostDelete(DeleteView):
+    model = Post
+    template_name = "blog/delete.html"
+    success_url = reverse_lazy("blog:home")
+    context_object_name = 'post'
     
     
 class postApi(APIView):
