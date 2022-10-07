@@ -8,9 +8,32 @@
 .unlogged {
   background-color: black;
   overflow-x: hidden;
-  background-image: url("/static/images/unsplash5.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  overflow-y: hidden;
+  background-color: snow;
+}
+.unlogged .svg1 {
+  position: absolute;
+  width: 20%;
+  right: 70px;
+  top: 130px;
+}
+.unlogged .svg2 {
+  position: absolute;
+  width: 20%;
+  bottom: 0;
+  left: 300px;
+}
+.unlogged .svg3 {
+  position: absolute;
+  right: 70px;
+  width: 70%;
+  top: 80px;
+}
+.unlogged .svg4 {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  width: 60%;
 }
 .unlogged header {
   position: fixed;
@@ -24,39 +47,69 @@
   justify-content: space-between;
   align-items: center;
 }
-.unlogged header .nav .navlogo {
-  transition: 0.2s;
-}
-.unlogged header .nav .navlogo:hover {
-  color: tomato;
-}
 .unlogged header .nav .navitems {
   display: flex;
   margin-right: 80px;
 }
 .unlogged header .nav .navitems .navitem {
-  margin-right: 20px;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-right: 40px;
   text-decoration: none;
   transition: 0.2s;
+  font-family: "Comfortaa", cursive;
+  border: 1px solid rgba(59, 130, 246, 0.5);
 }
 .unlogged header .nav .navitems .navitem:hover {
-  color: aliceblue;
-  border-bottom: 2px solid tomato;
+  color: black;
+  border-radius: 25px;
+  background-color: rgba(59, 130, 246, 0.5);
+  color: white;
 }
 .unlogged .button {
   position: absolute;
-  top: 30%;
-  left: 40%;
-  background-color: tomato;
+  bottom: 0;
+  left: 60%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 40px;
+  color: aliceblue;
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  color: black;
+  transition: 0.2s;
+}
+.unlogged .button:hover {
+  background-color: rgba(59, 130, 246, 0.5);
   border: none;
-  color: white;
+}
+.unlogged .button:hover a {
+  color: aliceblue;
+}
+.unlogged .landing {
+  position: absolute;
+  top: 80px;
+  width: 40%;
+  left: 70px;
+}
+.unlogged .landing .title {
+  font-family: "Comfortaa", cursive;
+}
+.unlogged .landing .quote {
+  font-family: "Comfortaa", cursive;
 }
 .unlogged .login {
   position: absolute;
   top: 30%;
   width: 30%;
+  font-family: "Comfortaa", cursive;
+}
+.unlogged .login .logbtn {
+  border: 2px solid rgba(59, 130, 246, 0.5);
+}
+.unlogged .login .logbtn:hover {
+  background-color: rgba(59, 130, 246, 0.5);
+  border: none;
+  color: aliceblue;
 }
 .unlogged .login .form {
   border: none;
@@ -64,6 +117,16 @@
 .unlogged .register {
   position: absolute;
   top: 20%;
+  font-family: "Comfortaa", cursive;
+}
+.unlogged .register .rgstbtn {
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  color: black;
+}
+.unlogged .register .rgstbtn:hover {
+  border: none;
+  color: white;
+  background-color: rgba(59, 130, 246, 0.5);
 }
 .unlogged .register .form {
   border: none;

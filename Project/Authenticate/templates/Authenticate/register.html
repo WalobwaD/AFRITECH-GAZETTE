@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 {% block title %}
 Register
@@ -9,15 +10,16 @@ Register
     {% else %}
     <div class="container register">
         <form method = 'POST' enctype="multipart/form-data" 
-            class="form p-3 form-control text-gray-100 font-bold bg-gray-700 leading-loose bg-opacity-50">
+            class="form p-3 form-control text-gray-900 font-bold bg-gray-300 leading-loose bg-opacity-50">
             {% csrf_token %}
             {{ user_form}}
             <div class="profile mt-3">{{ profile_form }}</div>
-            <p class="text-center">Already have an account? <a href="{% url 'Authenticate:login' %}">Login ...</a></p>
+            <p class="text-center font-light">Already have an account? <a href="{% url 'Authenticate:login' %}">Login ...</a></p>
             <div class="text-center">
-            <button type="submit" class="btn btn-primary p-3 mt-3" href="{% url 'Authenticate:login' %}">Register</button>
+            <button type="submit" class="rgstbtn btn p-3 mt-3" href="{% url 'Authenticate:login' %}">Register</button>
             </div>
         </form>
     </div>
+    <img src="{% static 'images/Login-rafiki.svg' %}" class="svg4 ">
     {% endif %}
 {% endblock %}

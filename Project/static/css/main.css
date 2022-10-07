@@ -54,7 +54,7 @@
   color: white;
 }
 .unlogged .login {
-  position: absolute;
+  position:absolute;
   top: 30%;
   width: 30%;
 }

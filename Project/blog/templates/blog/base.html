@@ -21,8 +21,9 @@
 <body class="logged">
 {% else %}
 <body class="unlogged">
+
 {% endif %}
-    <header class="shadow-lg text-white">
+    <header class="shadow-lg bg-blue-100">
         <nav class="nav py-3">
             {% if user.is_authenticated %}
             <a class="ml-8"data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -37,7 +38,7 @@
             </form>
             {% else %}
             <a href="{% url 'blog:home' %}" class="navlogo">
-                <span class="px-4 text-2xl fa-solid fa-blog">log</span>
+                <span class="px-4 text-2xl text-gray-900 hover:text-blue-400 ml-9 fa-solid fa-blog">log</span>
             </a>
             {% endif %}
             <div class="navitems text-gray-800 font-bold ">
@@ -62,8 +63,8 @@
 
                 {% else %}
 
-                <a class="navitem" href="{% url 'Authenticate:login' %}">Login</a>
-                <a class="navitem" href="{% url 'Authenticate:register' %}">Sign Up</a>
+                <a class="navitem px-6 py-2" href="{% url 'Authenticate:login' %}">Login</a>
+                <a class="navitem py-2 px-6" href="{% url 'Authenticate:register' %}">Sign Up</a>
 
                 {% endif %}
             </div>
