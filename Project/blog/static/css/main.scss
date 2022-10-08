@@ -11,6 +11,7 @@ $font-family6: 'Silkscreen', cursive;
     margin:0;
     padding:0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 .unlogged{
     background-color:black;
@@ -168,62 +169,149 @@ $font-family6: 'Silkscreen', cursive;
 }
 .logged{
     width:100%;
-    background-color:azure;
+    background-color: snow;
     overflow-x: hidden;
-
+    scroll-behavior: smooth;
     header{
         position: fixed;
         top:0;
         width: 100%;
         border: none;
-        background-color:azure;
+        background-color: snow;
         z-index: 10;
-
+        font-family: $font-family3;
+        opacity: 75%;
         .nav{
             .logo{
                 transition: 0.2s;
         
             }
             .logo:hover{
-                color:tomato;
+                color: rgb(59 130 246 / 0.5);
             }
             .search-bar{
                 margin:auto;
+
+                .searchbtn{
+                    border: 1px solid rgb(59 130 246 / 0.5);
+                }
+
+                .searchbtn:hover{
+                    background-color: rgb(59 130 246 / 0.5);
+                    color: white;
+                    border: none;
+                }
             }
         
             
             .navitems{
                 display:flex;
                 margin-right: 80px;
-                .navitem{
-                    margin-right:20px;
-                    font-size: 1.5rem;
-                    margin-right: 40px;
-                    text-decoration: none;
+
+                .circle{
+                    width:40px;
+                    height:40px;
+                    border-radius: 25px;
+                    border: 2px solid rgb(59 130 246 / 0.5);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     transition: 0.2s;
+                    overflow: hidden;
+
+                    .plus{
+                        color: rgb(59 130 246 / 0.5);
+                    }
+
+                    .plus:hover{
+                        color: white;
+                    }
                 }
-                .navitem:hover{
-                    color: aliceblue;
-                    border-bottom: 2px solid tomato;
+
+                .circle:hover{
+                    background-color: rgb(59 130 246 / 0.5);
+                    cursor: pointer;
+                    color: white;
+                    border: none;
                 }
             }
         }
     }
 
-    .sidebar{
+    .intro{
+        width: 100%;
         height: 100vh;
-        width:20%;
-        left:0;
+        overflow: hidden;
+        .svg5{
+            width:20%;
+            position: absolute;
+            right:250px;
+            padding-top: 10px;
+        }
+        .svg6{
+            width: 60%;
+        }
+    
+        .intro-text{
+            position: absolute;
+            bottom: 0;
+            right:90px;
+            font-family: $font-family3;
+            width: 30%;
+            text-transform: uppercase;
+        }
+        .create-text{
+            position: absolute;
+            font-family: $font-family3;
+            top:40%;
+            right: 20px;
+            width: 40%;
+        }
     }
 
-    .cards{
-        position: absolute;
-        top:1%;
+    .side-bar{
+        font-family: $font-family3;
+
+        .write{
+            width: 70px;
+            height: 70px;
+            border-radius: 35px;
+            border: 1px solid rgb(59 130 246 / 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .write:hover{
+            background-color: rgb(59 130 246 / 0.5);
+            border: none;
+            color: white;
+        }
+    }
+
+    .blog-cards{
+        width: 100%;
+        height: 100vh;
+        
+        .card{
+            width:80%;
+            font-family: $font-family3;
+
+            .view-art{
+                border: 1px solid rgb(59 130 246 / 0.5);
+            }
+            .view-art:hover{
+                background-color: rgb(59 130 246 / 0.5);
+                border: none;
+            }
+
+        }
     }
 
     .creative{
         h3{
-            font-family:$font-family4;
+            font-family:$font-family3;
         }
     }
     
@@ -239,7 +327,7 @@ $font-family6: 'Silkscreen', cursive;
     }
 
     .detailhead{
-        font-family: $font-family4;
+        font-family: $font-family3;
 
     }
 
@@ -247,11 +335,34 @@ $font-family6: 'Silkscreen', cursive;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 10%;
+        margin-top: 5%;
 
         .detailed{
             width: 70%;
-            height: 80vh;
         }
+    }
+
+    .footer{
+        width:100%;
+        height: 20vh;
+        background-color: white;
+
+        .foot{
+            .contact{
+
+                display: flex;
+                margin:auto;
+                .ig{
+                    width: 20%;
+                }
+                .twta{
+                    width: 20%;
+                }
+                .lnkd{
+                    width: 20%;
+                }
+            }
+        }
+    
     }
 }

@@ -35,6 +35,7 @@ def register(request):
             # profile.save()
             
             registered = True
+            return redirect('Authenticate:login')
     else:
         user_form = UserForm()
         #profile_form = UserProfileForm()          

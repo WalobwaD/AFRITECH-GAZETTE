@@ -8,6 +8,10 @@
 </p>
 <hr>
 <br>
+<h4>HomeView Page</h4>
+<p>
+    <img src="readmeimages/homepageblog.png">
+</p>
 <br>
 <hr>
 <br>

@@ -8,13 +8,13 @@
   <div class="detailhead text-2xl mt-5 text-center p-5 font-bold">
     <p>{{ detail.author }}'s view on {{ detail.title }}</p>
   </div>
+  <hr class=" mx-auto w-50">
   <div class="details">
     <div class="detailed shadow-lg">
       <div class="image w-100 flex justify-center bg-gray-800">
         <img src="{{ detail.post_image.url }}" class="rounded img-fluid">
       </div>
       <br>
-      <hr class="w-50 mx-auto font-bold p-4">
       <div class="title">
         <h3 class="text-3xl font-bold text-center p-2">{{ detail.title }}</h3>
       </div>
@@ -26,8 +26,8 @@
         <p class="text-center p-5">{{ detail.body }}</p>
       </div>
       {% if user.id == detail.author.id %}
-      <a href="{% url 'blog:update' slug=detail.slug %}" class="btn btn-warning">Update</a>
-      <a href="{% url 'blog:delete' slug=detail.slug %}" class="btn btn-danger">Delete</a>
+      <a href="{% url 'blog:update' slug=detail.slug %}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+      <a href="{% url 'blog:delete' slug=detail.slug %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
       {% endif %}
     </div>
 

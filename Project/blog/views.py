@@ -35,6 +35,7 @@ class PostList(ListView):
     model = Post
     context_object_name = 'posts'
     template_name= 'blog/home.html'
+    ordering = 'created'
     
     def get_queryset(self):
         search = self.request.GET.get('q', '')
