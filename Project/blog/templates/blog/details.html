@@ -22,8 +22,8 @@
       <div class="desc">
         <p class="text-center text-1xl pt-6 font-bold"> {{ detail.description }}</p>
       </div>
-      <div class="body">
-        <p class="text-center p-5">{{ detail.body }}</p>
+      <div class="body px-14">
+        <p class="text-center p-5">{{ detail.body | safe }}</p>
       </div>
       {% if user.id == detail.author.id %}
       <a href="{% url 'blog:update' slug=detail.slug %}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
