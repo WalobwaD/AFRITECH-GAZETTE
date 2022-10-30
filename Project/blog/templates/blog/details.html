@@ -1,17 +1,37 @@
 {% extends 'blog/base.html' %}
 {% block title %}
+{{ detail.title }}
 {% endblock %}
 {% block content %}
-    <div class="container text-center">
-        <div class="card mx-auto w-25 mt-20">
-            <img src="{{ detail.post_image.url }}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title font-bold">{{ detail.title }}</h5><hr>
-              <p class="card-text">{{ detail.description }}</p>
-              <p class="card-text">{{ detail.body }}</p>
-              <a href="#" class="btn btn-primary">Update</a>
-            </div>
-          </div>
+
+  {% if user.is_authenticated %}
+  <div class="detailhead text-2xl mt-5 text-center p-5 font-bold">
+    <p>{{ detail.author }}'s view on {{ detail.title }}</p>
+  </div>
+  <hr class=" mx-auto w-50">
+  <div class="details">
+    <div class="detailed shadow-lg">
+      <div class="image w-100 flex justify-center bg-gray-800">
+        <img src="{{ detail.post_image.url }}" class="rounded img-fluid">
+      </div>
+      <br>
+      <div class="title">
+        <h3 class="text-3xl font-bold text-center p-2">{{ detail.title }}</h3>
+      </div>
+      <hr class="p-3 mx-auto w-50">
+      <div class="desc">
+        <p class="text-center text-1xl pt-6 font-bold"> {{ detail.description }}</p>
+      </div>
+      <div class="body px-14">
+        <p class="text-center p-5">{{ detail.body | safe }}</p>
+      </div>
+      {% if user.id == detail.author.id %}
+      <a href="{% url 'blog:update' slug=detail.slug %}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+      <a href="{% url 'blog:delete' slug=detail.slug %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+      {% endif %}
     </div>
+
+  </div>
+  {% endif %}
 
 {% endblock %}

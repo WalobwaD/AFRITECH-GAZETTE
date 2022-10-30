@@ -1,35 +1,72 @@
 {% extends 'blog/base.html' %}
-
+{% load static %}
 {% block title %}
 Home
 {% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
-    <div class="cards pt-24 px-3">
-        <div class="row">
-            {% for post in posts %}
-                <div class="col">
-                    <div class="card" style="width: 20rem;">
-                        <img src="{{ post.post_image.url }}" class="card-img-top">
-                        <div class="card-body">
-                        <h5 class="card-title font-bold text-2xl">{{ post.title }}</h5>
-                        <p class="">By: <b>{{ post.author }}</b></p>
-                        <p class="card-text">{{ post.description }}</p>
-                        <a href="{{ post.slug }}" class="btn btn-primary">View Article</a>
-                        <small class="ml-2"><em>Published: {{ post.created }}</em></small>
+    <section class="intro">
+        <img src="{% static 'images/Directing the arrow up-rafiki.svg' %}" class="svg5">
+        <p class="create-text font-bold">Click on the plus sign to write an article of your own!</p>
+        <div class="intro-text">
+            <p class="font-bold text-blue-400 text-4xl">Enjoy Reading or Write educative articles and blogs ...</p><br>
+            <p class="font-bold">“If you want to be a writer, you must do two things above all others: read a lot and write a lot.” ― Stephen King</p>
+        </div>
+        <img src="{% static 'images/Knowledge-amico.svg' %}" class="svg6">
+    </section>
+    <hr>
+    <section class="blog-cards" id="articles">
+        <h3 class="text-center font-bold text-5xl mt-3">Blogs and articles</h3><hr class="w-50 mx-auto mt-3 pb-5">
+        <div class="cards pt-5">
+            <div class="row gx-1">
+                {% for post in posts %}
+                    <div class="col">
+                        <div class="card shadow-lg p-2">
+                            <img src="{{ post.post_image.url }}" class="card-img-top">
+                            <div class="card-body">
+                            <h5 class="card-title font-bold text-2xl">{{ post.title }}</h5>
+                            <p class="">By: <b>{{ post.author }}</b></p>
+                            <p class="card-text">{{ post.description }}</p>
+                            <a href="{{ post.slug }}" class="view-art btn">View</a><br>
+                            <small class="ml-2"><em>Published: {{ post.created }}</em></small>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    </section>
+    <section class="footer">
+        <hr>
+        <footer class="foot">
+            <h2 class="font-bold text-2xl">Contact me:</h2>
+            <div class="contact">
+                <a href="#"><img src="{% static 'images/Instagram_Box_Filled_L Shadowless.png'%}" class="ig">
+                <a href="#"><img src="{% static 'images/Twitter_Mark_L Shadowless.png'%}" class="twta">
+                <a href="#"><img src="{% static 'images/Linkedin_Filled_R Shadowless.png'%}" class="lnkd">
+            </div>
+        </footer>
+    </section>
     {% else %}
-    <div class="landing">
-        <a href="{% url 'Authenticate:login' %}" class="button btn btn-warning font-bold text-1xl p-3">
-            Write your blog
+    <div class="button flex items-center justify-center fa-bounce">
+        <a href="{% url 'Authenticate:login' %}" class="font-bold p-9 fa-solid fa-pen-nib">Write
         </a>
     </div>
+    <img src="{% static 'images/Blog post-amico (1).svg' %}" class="svg1">
+    <img src="{% static 'images/Content-amico.svg' %}" class="svg2">
+    <div class="landing">
+        <p class="title text-blue-400 font-bold text-5xl pt-9 mt-5">Walobwa's Blog Page</p>
+        <p class="quote text-2xl pt-4 font-bold">The best time to act on this was decades ago. The second best time is now. 
+            You've come to the right place, share your thoughts here by writing blogs ...
+        </p>
+    </div>
+    {% comment %} <section class="footer">
+        <footer class="foot">
+            <div class="contact">
+            </div>
+        </footer>
+    </section> {% endcomment %}
     {% endif %}
 
 {% endblock %}

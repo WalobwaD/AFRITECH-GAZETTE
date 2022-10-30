@@ -1,15 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Bebas+Neue&family=Comfortaa:wght@300;400;500;600;700&family=Peralta&family=Rubik+Distressed&family=Silkscreen&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .unlogged {
   background-color: black;
   overflow-x: hidden;
-  background-image: url("/static/images/unsplash5.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  overflow-y: hidden;
+  background-color: snow;
+}
+.unlogged .svg1 {
+  position: absolute;
+  width: 20%;
+  right: 70px;
+  top: 130px;
+}
+.unlogged .svg2 {
+  position: absolute;
+  width: 20%;
+  bottom: 0;
+  left: 300px;
+}
+.unlogged .svg3 {
+  position: absolute;
+  right: 70px;
+  width: 70%;
+  top: 80px;
+}
+.unlogged .svg4 {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  width: 60%;
 }
 .unlogged header {
   position: fixed;
@@ -18,44 +43,74 @@
   border: none;
   z-index: 10;
 }
-.unlogged header .navbar {
+.unlogged header .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.unlogged header .navbar .navlogo {
-  transition: 0.2s;
-}
-.unlogged header .navbar .navlogo:hover {
-  color: tomato;
-}
-.unlogged header .navbar .navitems {
+.unlogged header .nav .navitems {
   display: flex;
   margin-right: 80px;
 }
-.unlogged header .navbar .navitems .navitem {
-  margin-right: 20px;
-  font-size: 1.5rem;
+.unlogged header .nav .navitems .navitem {
+  font-size: 1.1rem;
   margin-right: 40px;
   text-decoration: none;
   transition: 0.2s;
+  font-family: "Comfortaa", cursive;
+  border: 1px solid rgba(59, 130, 246, 0.5);
 }
-.unlogged header .navbar .navitems .navitem:hover {
-  color: aliceblue;
-  border-bottom: 2px solid tomato;
+.unlogged header .nav .navitems .navitem:hover {
+  color: black;
+  border-radius: 25px;
+  background-color: rgba(59, 130, 246, 0.5);
+  color: white;
 }
 .unlogged .button {
   position: absolute;
-  top: 30%;
-  left: 40%;
-  background-color: tomato;
+  bottom: 0;
+  left: 60%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 40px;
+  color: aliceblue;
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  color: black;
+  transition: 0.2s;
+}
+.unlogged .button:hover {
+  background-color: rgba(59, 130, 246, 0.5);
   border: none;
-  color: white;
+}
+.unlogged .button:hover a {
+  color: aliceblue;
+}
+.unlogged .landing {
+  position: absolute;
+  top: 80px;
+  width: 40%;
+  left: 70px;
+}
+.unlogged .landing .title {
+  font-family: "Comfortaa", cursive;
+}
+.unlogged .landing .quote {
+  font-family: "Comfortaa", cursive;
 }
 .unlogged .login {
   position: absolute;
   top: 30%;
   width: 30%;
+  font-family: "Comfortaa", cursive;
+}
+.unlogged .login .logbtn {
+  border: 2px solid rgba(59, 130, 246, 0.5);
+}
+.unlogged .login .logbtn:hover {
+  background-color: rgba(59, 130, 246, 0.5);
+  border: none;
+  color: aliceblue;
 }
 .unlogged .login .form {
   border: none;
@@ -63,6 +118,16 @@
 .unlogged .register {
   position: absolute;
   top: 20%;
+  font-family: "Comfortaa", cursive;
+}
+.unlogged .register .rgstbtn {
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  color: black;
+}
+.unlogged .register .rgstbtn:hover {
+  border: none;
+  color: white;
+  background-color: rgba(59, 130, 246, 0.5);
 }
 .unlogged .register .form {
   border: none;
@@ -71,53 +136,165 @@
 
 .logged {
   width: 100%;
-  background-color: azure;
+  background-color: snow;
   overflow-x: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
+  scroll-behavior: smooth;
 }
 .logged header {
   position: fixed;
   top: 0;
   width: 100%;
   border: none;
-  background-color: azure;
+  background-color: snow;
   z-index: 10;
+  font-family: "Comfortaa", cursive;
+  opacity: 75%;
 }
-.logged header .navbar {
-  display: flex;
-  align-items: center;
-}
-.logged header .navbar .navlogo {
+.logged header .nav .logo {
   transition: 0.2s;
-  margin-left: -1000px;
 }
-.logged header .navbar .navlogo:hover {
-  color: tomato;
+.logged header .nav .logo:hover {
+  color: rgba(59, 130, 246, 0.5);
 }
-.logged header .navbar .navitems {
+.logged header .nav .search-bar {
+  margin: auto;
+}
+.logged header .nav .search-bar .searchbtn {
+  border: 1px solid rgba(59, 130, 246, 0.5);
+}
+.logged header .nav .search-bar .searchbtn:hover {
+  background-color: rgba(59, 130, 246, 0.5);
+  color: white;
+  border: none;
+}
+.logged header .nav .navitems {
   display: flex;
   margin-right: 80px;
 }
-.logged header .navbar .navitems .navitem {
-  margin-right: 20px;
-  font-size: 1.5rem;
-  margin-right: 40px;
-  text-decoration: none;
+.logged header .nav .navitems .circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.2s;
+  overflow: hidden;
 }
-.logged header .navbar .navitems .navitem:hover {
-  color: aliceblue;
-  border-bottom: 2px solid tomato;
+.logged header .nav .navitems .circle .plus {
+  color: rgba(59, 130, 246, 0.5);
 }
-.logged .sidebar {
+.logged header .nav .navitems .circle .plus:hover {
+  color: white;
+}
+.logged header .nav .navitems .circle:hover {
+  background-color: rgba(59, 130, 246, 0.5);
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+.logged .intro {
+  width: 100%;
   height: 100vh;
-  width: 20%;
-  left: 0;
+  overflow: hidden;
 }
-.logged .cards {
+.logged .intro .svg5 {
+  width: 20%;
   position: absolute;
-  top: 1%;
+  right: 250px;
+  padding-top: 10px;
+}
+.logged .intro .svg6 {
+  width: 60%;
+}
+.logged .intro .intro-text {
+  position: absolute;
+  bottom: 0;
+  right: 90px;
+  font-family: "Comfortaa", cursive;
+  width: 30%;
+  text-transform: uppercase;
+}
+.logged .intro .create-text {
+  position: absolute;
+  font-family: "Comfortaa", cursive;
+  top: 40%;
+  right: 20px;
+  width: 40%;
+}
+.logged .side-bar {
+  font-family: "Comfortaa", cursive;
+}
+.logged .side-bar .write {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logged .side-bar .write:hover {
+  background-color: rgba(59, 130, 246, 0.5);
+  border: none;
+  color: white;
+}
+.logged .blog-cards {
+  width: 100%;
+  height: 100vh;
+}
+.logged .blog-cards .card {
+  width: 80%;
+  font-family: "Comfortaa", cursive;
+}
+.logged .blog-cards .card .view-art {
+  border: 1px solid rgba(59, 130, 246, 0.5);
+}
+.logged .blog-cards .card .view-art:hover {
+  background-color: rgba(59, 130, 246, 0.5);
+  border: none;
+}
+.logged .creative h3 {
+  font-family: "Comfortaa", cursive;
+}
+.logged .createform {
+  font-family: "Comfortaa", cursive;
+  font-weight: 500;
+}
+.logged .createform button:hover {
+  background-color: tomato;
+  color: white;
+}
+.logged .detailhead {
+  font-family: "Comfortaa", cursive;
+}
+.logged .details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+.logged .details .detailed {
+  width: 70%;
+}
+.logged .footer {
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+}
+.logged .footer .foot .contact {
+  display: flex;
+  margin: auto;
+}
+.logged .footer .foot .contact .ig {
+  width: 20%;
+}
+.logged .footer .foot .contact .twta {
+  width: 20%;
+}
+.logged .footer .foot .contact .lnkd {
+  width: 20%;
 }
 
 /*# sourceMappingURL=main.css.map */

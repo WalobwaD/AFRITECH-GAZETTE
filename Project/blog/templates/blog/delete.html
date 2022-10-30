@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Delete
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="container text-center absolute top-1/2 left-1/3 w-1/3 shadow-lg bg-gray-700 text-white rounded">
+        <div class="p-3">
+            <p>Are you sure you want to delete {{ post.title}}</p>
+            <form method= 'POST'>
+                {% csrf_token %}
+            <button class="btn btn-danger">Yes</button>
+            <a href="{% url 'blog:details' slug=post.slug %}" class="btn btn-success">No</a>
+            </form>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

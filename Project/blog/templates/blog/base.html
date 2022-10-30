@@ -21,30 +21,42 @@
 <body class="logged">
 {% else %}
 <body class="unlogged">
+
 {% endif %}
-    <header class="shadow-lg text-white">
-        <nav class="navbar">
+    <header class="shadow-lg bg-blue-100">
+        <nav class="nav py-3">
             {% if user.is_authenticated %}
-            <a class="ml-8"data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <a class="ml-8 text-blue-400"data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                 <span class="fa-solid fa-bars text-gray-800 text-2xl"></span>
             </a>
-            <a href="{% url 'blog:home' %}" class="navlogo text-gray-800">
-                <span class=" text-2xl fa-solid fa-blog">log</span>
+            <a href="{% url 'blog:home' %}" class=" text-gray-800 pl-3">
+                <span class="logo text-gray-900 text-2xl fa-solid fa-blog">log</span>
             </a>
+            <form method="GET" class="search-bar w-25 flex">
+                <div class="input-group">
+                    <input type="search" name="q" placeholder="search by topic" class=" form-control">
+                    <button class="searchbtn btn input-group-text" type="submit"><span class="fa-solid fa-magnifying-glass"></span></button>
+                </div>
+            </form>
             {% else %}
             <a href="{% url 'blog:home' %}" class="navlogo">
-                <span class="px-4 text-2xl fa-solid fa-blog">log</span>
+                <span class="px-4 text-2xl text-gray-900 hover:text-blue-400 ml-9 fa-solid fa-blog">log</span>
             </a>
             {% endif %}
             <div class="navitems text-gray-800 font-bold ">
 
                 {% if user.is_authenticated %}
-                <a href="{% url 'blog:create' %}"><span class="fa-solid fa-plus mr-8 mt-1 text-2xl"></span></a>
+                <div class="circle mr-8 mt-1">
+                <a href="{% url 'blog:create' %}"><span class="plus fa-solid fa-plus fa-bounce text-2xl"></span></a>
+                </div>
+                <div class="articles mx-4 mt-2">
+                    <a href="#articles" class="text-gray-800 hover:text-blue-400">Articles</a>
+                </div>
                 <div class="btn-group mr-1 ">
                     <button type="button" class="btn ">
-                        <span class="fa-solid fa-user text-gray-800"></span>
+                        <span class="fa-solid fa-user text-blue-400"></span>
                     </button>
-                    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button type="button" class="btn dropdown-toggle dropdown-toggle-split text-blue-400" data-bs-toggle="dropdown" aria-expanded="false">
                       <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
                     <ul class="dropdown-menu">
@@ -53,27 +65,28 @@
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">Create article</a></li>
                     </ul>
-                  </div>
+                </div>
 
                 {% else %}
 
-                <a class="navitem" href="{% url 'Authenticate:login' %}">Login</a>
-                <a class="navitem" href="{% url 'Authenticate:register' %}">Sign Up</a>
+                <a class="navitem px-6 py-2" href="{% url 'Authenticate:login' %}">Login</a>
+                <a class="navitem py-2 px-6" href="{% url 'Authenticate:register' %}">Sign Up</a>
 
                 {% endif %}
             </div>
             </div>
         </nav>
     </header>
-    <div class="offcanvas offcanvas-start bg-gray-900 text-gray-100" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="side-bar offcanvas offcanvas-start bg-gray-100 text-gray-800" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header ">
-          <h5 class="offcanvas-title text-3xl font-bold" id="offcanvasExampleLabel">Blogs by Walobwa !</h5>
+          <h5 class="offcanvas-title text-3xl font-bold mx-auto" id="offcanvasExampleLabel">Blogs by Walobwa !</h5>
         </div>
         <div class="offcanvas-body text-center"> 
-          <div>
-            <a href="{% url 'blog:create' %}" class="btn btn-success p-2 ">Write one !</a>
-            <h3 class="font-bold mt-3 text-2xl">Topics</h3>
+          <div class="btn write mx-auto">
+            <a href="{% url 'blog:create' %}">Create</a>
+            
           </div>
+          <h3 class="font-bold mt-3 text-2xl">Topics</h3><hr>
         </div>
     </div>
     {% block content %}

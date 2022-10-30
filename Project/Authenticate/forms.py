@@ -26,11 +26,11 @@ class UserForm(forms.ModelForm):
         
         
        
-class UserProfileForm(forms.ModelForm):
-    class Meta():
-        model = UserProfile
-        fields = ['profile_pic']
+# class UserProfileForm(forms.ModelForm):
+#     class Meta():
+#         model = UserProfile
+#         fields = ['profile_pic']
         
-        help_texts = {
-            'profile_pic' : None
-        }
+#         help_texts = {
+#             'profile_pic' : None
+#         }

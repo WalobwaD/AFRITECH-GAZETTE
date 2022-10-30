@@ -4,14 +4,15 @@
 <h3>Overview:</h3>
 <h4>Landing Page<h4>
 <p>
-    <img src="readmeimages/blogland.png">
+    <img src="readmeimages/bloglandpage.png">
 </p>
 <hr>
 <br>
-<h4>Home Page(after logging in)</h4>
+<h4>HomeView Page</h4>
 <p>
-    <img src="readmeimages/bloghomep.png">
+    <img src="readmeimages/homepageblog.png">
 </p>
+<br>
 <hr>
 <br>
 <h4>Powered by: </h4>
