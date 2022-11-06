@@ -1,4 +1,4 @@
-<h1 align="center">Walobwa's Blog Page</h1>
+<h1 align="center">AFRITECH GAZETTE</h1>
 <hr>
 <p>Decided to create my own blog page where I would be posting my articles since I thought of trying out technical writing</p>
 <h3>Overview:</h3>
